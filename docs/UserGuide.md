@@ -63,7 +63,7 @@ Format: `edit MEAL_TYPE INDEX UPDATED_FOOD_ITEM CALORIES`
 
 Example:
 
-* `edit dinner 2 rice 300` edits the 2nd food item for dinner to rice with 300 calories. 
+* `edit dinner 2 rice 300` edits the 2nd food item for dinner to rice with 300 calories.
 
 ### Show the daily calorie intake: `review`
 
@@ -92,11 +92,8 @@ _Details coming soon ..._
 
 **Q**: How do I transfer my data to another Computer?<br>
 **A**: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous AddressBook home folder.
-
 --------------------------------------------------------------------------------------------------------------------
-
 ## Command summary
-
  Action     | Format                             | Examples
 ------------|----------------------------------- | --------------------------------------------------------------------  
  **Add**    | `add FOOD_ITEM CALORIES MEAL_TYPE` | ` add donut 1000 breakfast`
@@ -104,6 +101,4 @@ _Details coming soon ..._
  **Edit**   | `edit MEAL_TYPE INDEX UPDATED_FOOD_ITEM CALORIES`         | `edit dinner 2 rice 300 ` 
  **review** | `review`                           | `review`                                                                 
  **List**   | `list`                             |    `list`                                                                                                     
- **exit**   | `exit`                             |    `exit`                                                                                                     
-
-
+ **exit**   | `exit`                             |    `exit`

@@ -353,13 +353,13 @@ Priorities: High (must have) - `* * *`, Medium (nice to have) - `* *`, Low (unli
 **Extensions**
 
 * 2a. The list is empty
-  
+
   Use case ends.
 
 * 3a. The given food item is invalid
 
   * 3a1. NutriGoals show an error message
-    
+
     Use case resumes at step 2.
 
 ### Non-Functional Requirements
