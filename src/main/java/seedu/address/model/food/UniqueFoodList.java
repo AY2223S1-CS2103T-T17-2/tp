@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.food;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
@@ -8,8 +8,8 @@ import java.util.List;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import seedu.address.model.person.exceptions.DuplicatePersonException;
-import seedu.address.model.person.exceptions.PersonNotFoundException;
+import seedu.address.model.food.exceptions.DuplicatePersonException;
+import seedu.address.model.food.exceptions.PersonNotFoundException;
 
 /**
  * A list of persons that enforces uniqueness between its elements and does not allow nulls.
@@ -20,9 +20,9 @@ import seedu.address.model.person.exceptions.PersonNotFoundException;
  *
  * Supports a minimal set of list operations.
  *
- * @see Food#isSamePerson(Food)
+ * @see Food#isSameFood(Food)
  */
-public class UniquePersonList implements Iterable<Food> {
+public class UniqueFoodList implements Iterable<Food> {
 
     private final ObservableList<Food> internalList = FXCollections.observableArrayList();
     private final ObservableList<Food> internalUnmodifiableList =
@@ -33,7 +33,7 @@ public class UniquePersonList implements Iterable<Food> {
      */
     public boolean contains(Food toCheck) {
         requireNonNull(toCheck);
-        return internalList.stream().anyMatch(toCheck::isSamePerson);
+        return internalList.stream().anyMatch(toCheck::isSameFood);
     }
 
     /**
@@ -53,7 +53,7 @@ public class UniquePersonList implements Iterable<Food> {
      * {@code target} must exist in the list.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the list.
      */
-    public void setPerson(Food target, Food editedFood) {
+    public void setFoodItem(Food target, Food editedFood) {
         requireAllNonNull(target, editedFood);
 
         int index = internalList.indexOf(target);
@@ -61,7 +61,7 @@ public class UniquePersonList implements Iterable<Food> {
             throw new PersonNotFoundException();
         }
 
-        if (!target.isSamePerson(editedFood) && contains(editedFood)) {
+        if (!target.isSameFood(editedFood) && contains(editedFood)) {
             throw new DuplicatePersonException();
         }
 
@@ -79,7 +79,7 @@ public class UniquePersonList implements Iterable<Food> {
         }
     }
 
-    public void setPersons(UniquePersonList replacement) {
+    public void setFoodItems(UniqueFoodList replacement) {
         requireNonNull(replacement);
         internalList.setAll(replacement.internalList);
     }
@@ -88,9 +88,9 @@ public class UniquePersonList implements Iterable<Food> {
      * Replaces the contents of this list with {@code persons}.
      * {@code persons} must not contain duplicate persons.
      */
-    public void setPersons(List<Food> foods) {
+    public void setFoodItems(List<Food> foods) {
         requireAllNonNull(foods);
-        if (!personsAreUnique(foods)) {
+        if (!foodItemsAreUnique(foods)) {
             throw new DuplicatePersonException();
         }
 
@@ -112,8 +112,8 @@ public class UniquePersonList implements Iterable<Food> {
     @Override
     public boolean equals(Object other) {
         return other == this // short circuit if same object
-                || (other instanceof UniquePersonList // instanceof handles nulls
-                        && internalList.equals(((UniquePersonList) other).internalList));
+                || (other instanceof UniqueFoodList // instanceof handles nulls
+                        && internalList.equals(((UniqueFoodList) other).internalList));
     }
 
     @Override
@@ -124,10 +124,10 @@ public class UniquePersonList implements Iterable<Food> {
     /**
      * Returns true if {@code persons} contains only unique persons.
      */
-    private boolean personsAreUnique(List<Food> foods) {
+    private boolean foodItemsAreUnique(List<Food> foods) {
         for (int i = 0; i < foods.size() - 1; i++) {
             for (int j = i + 1; j < foods.size(); j++) {
-                if (foods.get(i).isSamePerson(foods.get(j))) {
+                if (foods.get(i).isSameFood(foods.get(j))) {
                     return false;
                 }
             }

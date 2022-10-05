@@ -7,8 +7,8 @@ import java.util.stream.Collectors;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Calorie;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Food;
-import seedu.address.model.person.Name;
+import seedu.address.model.food.Food;
+import seedu.address.model.food.Name;
 import seedu.address.model.tag.Tag;
 
 /**

@@ -11,7 +11,7 @@ import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 
 /**
  * Represents the in-memory model of the address book data.
@@ -104,24 +104,24 @@ public class ModelManager implements Model {
     }
 
     @Override
-    public boolean hasPerson(Food food) {
+    public boolean hasFoodItem(Food food) {
         requireNonNull(food);
         return addressBook.hasPerson(food);
     }
 
     @Override
-    public void deletePerson(Food target) {
+    public void deleteFood(Food target) {
         addressBook.removePerson(target);
     }
 
     @Override
-    public void addPerson(Food food) {
+    public void addFood(Food food) {
         addressBook.addPerson(food);
         updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
     }
 
     @Override
-    public void setPerson(Food target, Food editedFood) {
+    public void setFood(Food target, Food editedFood) {
         requireAllNonNull(target, editedFood);
 
         addressBook.setPerson(target, editedFood);

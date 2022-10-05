@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 
 /**
  * The API of the Model component.
@@ -65,26 +65,26 @@ public interface Model {
     /**
      * Returns true if a person with the same identity as {@code person} exists in the address book.
      */
-    boolean hasPerson(Food food);
+    boolean hasFoodItem(Food food);
 
     /**
      * Deletes the given person.
      * The person must exist in the address book.
      */
-    void deletePerson(Food target);
+    void deleteFood(Food target);
 
     /**
      * Adds the given person.
      * {@code person} must not already exist in the address book.
      */
-    void addPerson(Food food);
+    void addFood(Food food);
 
     /**
      * Replaces the given person {@code target} with {@code editedPerson}.
      * {@code target} must exist in the address book.
      * The person identity of {@code editedPerson} must not be the same as another existing person in the address book.
      */
-    void setPerson(Food target, Food editedFood);
+    void setFood(Food target, Food editedFood);
 
     /** Returns an unmodifiable view of the filtered person list */
     ObservableList<Food> getFilteredPersonList();

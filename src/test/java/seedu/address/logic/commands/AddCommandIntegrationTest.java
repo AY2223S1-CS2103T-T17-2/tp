@@ -10,7 +10,7 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 import seedu.address.testutil.PersonBuilder;
 
 /**
@@ -30,7 +30,7 @@ public class AddCommandIntegrationTest {
         Food validFood = new PersonBuilder().build();
 
         Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
-        expectedModel.addPerson(validFood);
+        expectedModel.addFood(validFood);
 
         assertCommandSuccess(new AddCommand(validFood), model,
                 String.format(AddCommand.MESSAGE_SUCCESS, validFood), expectedModel);

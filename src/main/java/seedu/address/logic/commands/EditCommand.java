@@ -18,8 +18,8 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.logic.parser.Prefix;
 import seedu.address.model.Calorie;
 import seedu.address.model.Model;
-import seedu.address.model.person.Food;
-import seedu.address.model.person.Name;
+import seedu.address.model.food.Food;
+import seedu.address.model.food.Name;
 import seedu.address.model.tag.Tag;
 
 /**
@@ -73,11 +73,11 @@ public class EditCommand extends Command {
         Food foodToEdit = lastShownList.get(index.getZeroBased());
         Food editedFood = createEditedFood(foodToEdit, editFoodDescriptor);
 
-        if (!foodToEdit.isSamePerson(editedFood) && model.hasPerson(editedFood)) {
+        if (!foodToEdit.isSameFood(editedFood) && model.hasFoodItem(editedFood)) {
             throw new CommandException(MESSAGE_DUPLICATE_FOOD);
         }
 
-        model.setPerson(foodToEdit, editedFood);
+        model.setFood(foodToEdit, editedFood);
         model.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
         return new CommandResult(String.format(MESSAGE_EDIT_FOOD_SUCCESS, editedFood));
     }

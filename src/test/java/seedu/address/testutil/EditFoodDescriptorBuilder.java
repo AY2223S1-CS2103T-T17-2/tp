@@ -6,8 +6,8 @@ import java.util.stream.Stream;
 
 import seedu.address.logic.commands.EditCommand.EditFoodDescriptor;
 import seedu.address.model.Calorie;
-import seedu.address.model.person.Food;
-import seedu.address.model.person.Name;
+import seedu.address.model.food.Food;
+import seedu.address.model.food.Name;
 import seedu.address.model.tag.Tag;
 
 /**

@@ -1,4 +1,4 @@
-package seedu.address.model.person;
+package seedu.address.model.food;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
@@ -52,7 +52,7 @@ public class Food {
      * Returns true if both persons have the same name.
      * This defines a weaker notion of equality between two persons.
      */
-    public boolean isSamePerson(Food otherFood) {
+    public boolean isSameFood(Food otherFood) {
         if (otherFood == this) {
             return true;
         }

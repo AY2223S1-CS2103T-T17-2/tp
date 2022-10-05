@@ -10,7 +10,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import seedu.address.model.AddressBook;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 
 /**
  * A utility class containing a list of {@code Person} objects to be used in tests.

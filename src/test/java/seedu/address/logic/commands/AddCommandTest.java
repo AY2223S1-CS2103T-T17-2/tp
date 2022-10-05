@@ -21,7 +21,7 @@ import seedu.address.model.Calorie;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 import seedu.address.testutil.PersonBuilder;
 
 public class AddCommandTest {
@@ -110,7 +110,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public void addPerson(Food food) {
+        public void addFood(Food food) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -141,17 +141,17 @@ public class AddCommandTest {
         }
 
         @Override
-        public boolean hasPerson(Food food) {
+        public boolean hasFoodItem(Food food) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void deletePerson(Food target) {
+        public void deleteFood(Food target) {
             throw new AssertionError("This method should not be called.");
         }
 
         @Override
-        public void setPerson(Food target, Food editedFood) {
+        public void setFood(Food target, Food editedFood) {
             throw new AssertionError("This method should not be called.");
         }
 
@@ -178,9 +178,9 @@ public class AddCommandTest {
         }
 
         @Override
-        public boolean hasPerson(Food food) {
+        public boolean hasFoodItem(Food food) {
             requireNonNull(food);
-            return this.food.isSamePerson(food);
+            return this.food.isSameFood(food);
         }
     }
 
@@ -191,13 +191,13 @@ public class AddCommandTest {
         final ArrayList<Food> personsAdded = new ArrayList<>();
 
         @Override
-        public boolean hasPerson(Food food) {
+        public boolean hasFoodItem(Food food) {
             requireNonNull(food);
-            return personsAdded.stream().anyMatch(food::isSamePerson);
+            return personsAdded.stream().anyMatch(food::isSameFood);
         }
 
         @Override
-        public void addPerson(Food food) {
+        public void addFood(Food food) {
             requireNonNull(food);
             personsAdded.add(food);
         }

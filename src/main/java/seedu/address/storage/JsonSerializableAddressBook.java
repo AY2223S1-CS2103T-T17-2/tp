@@ -12,7 +12,7 @@ import seedu.address.commons.exceptions.IllegalValueException;
 import seedu.address.model.AddressBook;
 import seedu.address.model.Calorie;
 import seedu.address.model.ReadOnlyAddressBook;
-import seedu.address.model.person.Food;
+import seedu.address.model.food.Food;
 
 /**
  * An Immutable AddressBook that is serializable to JSON format.

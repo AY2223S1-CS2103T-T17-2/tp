@@ -23,15 +23,15 @@ import seedu.address.logic.commands.FindCommand;
 import seedu.address.logic.commands.HelpCommand;
 import seedu.address.logic.commands.ListCommand;
 import seedu.address.logic.parser.exceptions.ParseException;
-import seedu.address.model.person.Food;
-import seedu.address.model.person.NameContainsKeywordsPredicate;
+import seedu.address.model.food.Food;
+import seedu.address.model.food.NameContainsKeywordsPredicate;
 import seedu.address.testutil.EditFoodDescriptorBuilder;
 import seedu.address.testutil.PersonBuilder;
 import seedu.address.testutil.PersonUtil;
 
-public class AddressBookParserTest {
+public class NutriGoalsParserTest {
 
-    private final AddressBookParser parser = new AddressBookParser();
+    private final NutriGoalsParser parser = new NutriGoalsParser();
 
     @Test
     public void parseCommand_add() throws Exception {

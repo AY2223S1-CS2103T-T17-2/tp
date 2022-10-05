@@ -31,6 +31,9 @@ public class Calorie {
      * Returns true if a given string is a valid calorie value.
      */
     public static boolean isValidCalorie(String calorie) {
+        if (calorie == null) {
+            return false;
+        }
         if (!calorie.isEmpty() && calorie.matches(VALIDATION_REGEX)) {
             try {
                 Integer calorieValue = Integer.parseInt(calorie);

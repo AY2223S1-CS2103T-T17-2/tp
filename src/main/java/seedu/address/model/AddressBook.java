@@ -5,8 +5,8 @@ import static java.util.Objects.requireNonNull;
 import java.util.List;
 
 import javafx.collections.ObservableList;
-import seedu.address.model.person.Food;
-import seedu.address.model.person.UniquePersonList;
+import seedu.address.model.food.Food;
+import seedu.address.model.food.UniqueFoodList;
 
 /**
  * Wraps all data at the address-book level
@@ -14,7 +14,7 @@ import seedu.address.model.person.UniquePersonList;
  */
 public class AddressBook implements ReadOnlyAddressBook {
 
-    private final UniquePersonList persons;
+    private final UniqueFoodList persons;
     private Calorie calorieTarget = new Calorie(); // defaults calorie to 2000 on the first edit to the book
 
     /*
@@ -24,7 +24,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * Note that non-static init blocks are not recommended to use. There are other ways to avoid duplication
      *   among constructors.
     */ {
-        persons = new UniquePersonList();
+        persons = new UniqueFoodList();
     }
 
     public AddressBook() {
@@ -45,7 +45,7 @@ public class AddressBook implements ReadOnlyAddressBook {
      * {@code persons} must not contain duplicate persons.
      */
     public void setPersons(List<Food> foods) {
-        this.persons.setPersons(foods);
+        this.persons.setFoodItems(foods);
     }
 
     /**
@@ -83,7 +83,7 @@ public class AddressBook implements ReadOnlyAddressBook {
     public void setPerson(Food target, Food editedFood) {
         requireNonNull(editedFood);
 
-        persons.setPerson(target, editedFood);
+        persons.setFoodItem(target, editedFood);
     }
 
     /**
